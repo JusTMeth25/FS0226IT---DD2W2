@@ -1,5 +1,5 @@
 // Oggetti
-const persona = {
+/*const persona = {
   nome: "Mario",
   cognome: "Rossi",
   num_corsi: 3,
@@ -199,7 +199,7 @@ if (personAge >= 18 && abbonato) {
    console.log('Non puo entrare');
 }
 
-
+*/
 
 // Inizio esercizi
 
@@ -211,14 +211,21 @@ REGOLE
 - Cerca solo cose non viste a lezione. Tutto il necessario è già stato spiegato stamattina.
 */
 
-
 /* ESERCIZIO 1 — Oggetto persona
    Crea un oggetto "persona" con: nome, cognome, eta, citta.
    Stampa: "Mario Rossi, 25 anni, vive a Roma."
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+/*const persona = {
+nome: 'Lorenzo',
+cognome: 'Melis',
+eta: '29',
+citta: 'Roma',
+} 
 
+console.log(`${persona.nome} ${persona.cognome} , ${persona.eta} anni, vive a ${persona.citta}.`);
+*/
 
 /* ESERCIZIO 2 — Aggiungi e rimuovi
    Sull'oggetto "persona": aggiungi "email", poi rimuovi "eta".
@@ -226,7 +233,18 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+/*const persona = {
+  nome: "Lorenzo",
+  cognome: "Melis",
+  email: "lorenzo.melis@yahoo.it",
+  eta: 29,
+  citta: "Roma",
+};
 
+delete persona.eta;
+
+console.log(persona);
+*/
 
 /* ESERCIZIO 3 — Oggetto annidato
    Oggetto "utente" con una proprietà "indirizzo" (oggetto con via, citta, cap).
@@ -234,7 +252,16 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const utente = {
+  indirizzo: {
+    via: "Roma",
+    civico: 20,
+    cap: 10100,
+    citta: "Torino",
+  },
+};
 
+console.log(`CAP: ${utente.indirizzo.cap}`);
 
 /* ESERCIZIO 4 — Bracket dinamica
    Sull'oggetto "persona", variabile chiave = "nome".
@@ -242,7 +269,15 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const persona = {
+  nome: "Lorenzo",
+  cognome: "Melis",
+  email: "lorenzo.melis@yahoo.it",
+  eta: 29,
+  citta: "Roma",
+};
 
+console.log(`Valore di nome: ${persona["nome"]}`);
 
 /* ESERCIZIO 5 — Numero più grande
    Tre numeri a, b, c.
@@ -250,7 +285,19 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let numA = 12;
+let numB = 19;
+let numC = 19;
 
+if (numA > numB && numA > numC) {
+  console.log(numA);
+} else if (numB > numA && numB > numC) {
+  console.log(numB);
+} else if (numC > numA && numC > numB) {
+  console.log(numC);
+} else if (numB === numC || numA === numB || numA === numC) {
+  console.log("Pareggio");
+}
 
 /* ESERCIZIO 6 — E-commerce: spedizione
    Variabile "totale".
@@ -260,7 +307,17 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let totale = 67;
 
+if (totale < 50) {
+  console.log(
+    `Totale carrello: ${totale}€ - Spedizione: 9.9€ - Totale finale: ${totale + 9.9}€`,
+  );
+} else if (totale >= 50) {
+  console.log(
+    `Totale carrello: ${totale}€ - Spedizione: gratuita - Totale finale: ${totale}€`,
+  );
+}
 
 /* ESERCIZIO 7 — typeof check
    Crea un array con 3 valori diversi (es. [42, "ciao", true]).
@@ -268,7 +325,16 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const parole = [42, "ciao", true];
 
+for (let i = 0; i < parole.length; i++) {
+  let x = parole[i];
+  if (typeof x === "number") {
+    console.log(x + " è un numero ");
+  } else if (typeof x !== "number") {
+    console.log(x + " non è un numero ");
+  }
+}
 
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
@@ -276,7 +342,14 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let vuoto = [];
 
+vuoto.push(1, 2, 3, 4, 5);
+
+vuoto.unshift(0);
+
+console.log(vuoto);
+console.log(`Lunghezza: ${vuoto.length}`);
 
 /* ESERCIZIO 9 — Carrello con splice
    Array ["Penna", "Quaderno", "Zaino", "Astuccio"].
@@ -285,6 +358,17 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let carrello = ["Penna", "Quaderno", "Zaino", "Astuccio"];
+
+console.log(carrello);
+console.log("-");
+
+carrello.splice(1, 1);
+console.log(carrello);
+
+carrello.splice(1, 0, 'Diario');
+console.log(carrello);
+
 
 
 /* ESERCIZIO 10 — Cerca un articolo
@@ -295,6 +379,9 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let prodotti = ["Penna", "Quaderno", "Zaino", "Astuccio"];
+
+
 
 
 /* ESERCIZIO 11 — Lista utenti
@@ -305,7 +392,6 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
 /* ESERCIZIO 12 — Inventario disponibili
    Array prodotti di 4 oggetti { nome, prezzo, disponibile }.
    Con for, per ogni prodotto:
@@ -315,7 +401,6 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
 
 /* --EXTRA-- ESERCIZIO 13 — Reverse manuale
    Array [1, 2, 3, 4, 5].
